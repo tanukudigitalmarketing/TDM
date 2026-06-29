@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanuku Digital Marketing | Professional Digital Marketing Services</title>
+<meta name="description" content="Tanuku Digital Marketing offers Website Development, SEO, Social Media Marketing, WhatsApp Marketing, Email Marketing and Digital Advertising across Andhra Pradesh and India.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8;padding:0 2rem;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:#1a6bff;}
+.nav-logo span{color:#1a1a1a;}
+.nav-links{display:flex;gap:1.8rem;font-size:14px;font-weight:500;color:#555;}
+.nav-links a:hover{color:#1a6bff;}
+.nav-cta{background:#1a6bff;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px;}
+.mobile-menu{display:none;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid #e8e8e8;}
+.mobile-menu a{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;}
+.mobile-menu.open{display:flex;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#eef4ff 0%,#f0f9ff 60%,#fff 100%);padding:5rem 2rem 4rem;text-align:center;}
+.hero-inner{max-width:780px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#dbeafe;color:#1a6bff;font-size:13px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:1.5rem;border:1px solid #bfdbfe;}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:46px;font-weight:800;line-height:1.15;letter-spacing:-1.5px;color:#0f172a;margin-bottom:1.25rem;}
+.hero h1 span{color:#1a6bff;}
+.hero p{font-size:17px;color:#475569;max-width:620px;margin:0 auto 2.5rem;line-height:1.75;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.btn-blue{background:#1a6bff;color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;}
+.btn-blue:hover{background:#0f5ae8;}
+.btn-green{background:#25d366;color:#fff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline{background:#fff;color:#1a6bff;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;border:2px solid #1a6bff;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap;}
+.hero-stat .num{font-size:28px;font-weight:800;color:#1a6bff;}
+.hero-stat .lbl{font-size:13px;color:#64748b;margin-top:2px;}
+
+/* FREE CONSULTATION BANNER */
+.free-banner{background:linear-gradient(90deg,#1a6bff,#7c3aed);padding:1.25rem 2rem;text-align:center;color:#fff;}
+.free-banner p{font-size:16px;font-weight:600;margin-bottom:0.75rem;}
+.btn-white{background:#fff;color:#1a6bff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;}
+
+/* SECTIONS COMMON */
+.section{padding:5rem 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.sec-tag{display:inline-block;background:#eff6ff;color:#1a6bff;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:12px;}
+.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;color:#0f172a;margin-bottom:8px;letter-spacing:-0.5px;}
+.sec-sub{font-size:16px;color:#64748b;margin-bottom:2.5rem;}
+.bg-light{background:#f8fafc;}
+.bg-dark{background:#0f172a;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.about-text p{font-size:15px;color:#475569;line-height:1.8;margin-bottom:1rem;}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.5rem;}
+.highlight-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:1rem;text-align:center;}
+.highlight-box .h-num{font-size:24px;font-weight:800;color:#1a6bff;}
+.highlight-box .h-lbl{font-size:12px;color:#64748b;margin-top:2px;}
+.about-visual{background:linear-gradient(135deg,#1a6bff,#7c3aed);border-radius:20px;padding:2.5rem;color:#fff;text-align:center;}
+.about-visual h3{font-size:22px;font-weight:700;margin-bottom:1rem;}
+.about-visual p{font-size:14px;opacity:0.85;line-height:1.7;}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+.svc-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.75rem;transition:box-shadow 0.2s,border-color 0.2s;position:relative;overflow:hidden;}
+.svc-card:hover{box-shadow:0 8px 30px rgba(26,107,255,0.12);border-color:#bfdbfe;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1a6bff,#7c3aed);}
+.svc-emoji{font-size:36px;margin-bottom:12px;display:block;}
+.svc-name{font-size:18px;font-weight:700;color:#0f172a;margin-bottom:10px;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.tag{background:#f1f5f9;color:#475569;font-size:12px;font-weight:500;padding:4px 10px;border-radius:6px;}
+
+/* WHY CHOOSE US */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.why-item{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px;transition:box-shadow 0.2s;}
+.why-item:hover{box-shadow:0 4px 16px rgba(26,107,255,0.1);}
+.why-check{width:36px;height:36px;background:#eff6ff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+.why-text{font-size:14px;font-weight:600;color:#1e293b;}
+
+/* PROCESS */
+.process-steps{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;}
+.process-step{text-align:center;flex:1;min-width:140px;padding:0 8px;}
+.step-circle{width:64px;height:64px;background:linear-gradient(135deg,#1a6bff,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px;color:#fff;font-weight:800;}
+.step-name{font-size:14px;font-weight:600;color:#0f172a;}
+.step-desc{font-size:12px;color:#64748b;margin-top:4px;}
+.process-arrow{font-size:24px;color:#94a3b8;flex-shrink:0;padding-bottom:20px;}
+
+/* INDUSTRIES */
+.industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+.industry-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.25rem;text-align:center;font-size:14px;font-weight:600;color:#334155;transition:all 0.2s;}
+.industry-card:hover{background:#eff6ff;border-color:#bfdbfe;color:#1a6bff;}
+.industry-icon{font-size:28px;display:block;margin-bottom:8px;}
+
+/* TECHNOLOGIES */
+.tech-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.tech-pill{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:8px 18px;font-size:13px;font-weight:600;color:#334155;}
+
+/* SERVICE AREAS */
+.areas-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.area-pill{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:8px 18px;font-size:13px;font-weight:600;color:#1a6bff;}
+
+/* PORTFOLIO */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
+.portfolio-card{background:linear-gradient(135deg,#f1f5f9,#e2e8f0);border-radius:16px;height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;border:1px solid #e2e8f0;}
+.portfolio-card p{font-size:14px;color:#94a3b8;font-weight:500;}
+.portfolio-card span{font-size:40px;}
+
+/* PRICING */
+.pricing-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
+.pricing-table thead{background:linear-gradient(90deg,#1a6bff,#7c3aed);color:#fff;}
+.pricing-table th{padding:1rem 1.5rem;text-align:left;font-size:14px;font-weight:700;}
+.pricing-table td{padding:1rem 1.5rem;font-size:14px;border-bottom:1px solid #f1f5f9;color:#334155;}
+.pricing-table tr:last-child td{border-bottom:none;}
+.pricing-table tr:nth-child(even) td{background:#f8fafc;}
+.price{font-weight:700;color:#1a6bff;}
+.contact-us{color:#7c3aed;font-weight:600;}
+
+/* TESTIMONIALS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.testimonial-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.75rem;position:relative;}
+.testimonial-card::before{content:'"';font-size:64px;color:#dbeafe;line-height:1;position:absolute;top:12px;left:20px;font-family:Georgia,serif;}
+.t-text{font-size:15px;color:#475569;line-height:1.8;margin-top:1.5rem;padding-top:0.5rem;}
+.t-author{margin-top:1rem;padding-top:1rem;border-top:1px solid #f1f5f9;}
+.t-name{font-size:14px;font-weight:700;color:#0f172a;}
+.t-role{font-size:12px;color:#94a3b8;}
+.stars{color:#f59e0b;font-size:14px;margin-bottom:4px;}
+
+/* FAQ */
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;}
+.faq-q{width:100%;background:none;border:none;padding:1.1rem 1.5rem;text-align:left;font-size:15px;font-weight:600;color:#0f172a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.faq-q:hover{background:#f8fafc;}
+.faq-toggle{font-size:20px;color:#1a6bff;font-weight:400;flex-shrink:0;}
+.faq-a{display:none;padding:0 1.5rem 1.1rem;font-size:14px;color:#475569;line-height:1.75;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-toggle{transform:rotate(45deg);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.contact-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:2rem;}
+.contact-card h3{font-size:20px;font-weight:700;margin-bottom:1.5rem;color:#0f172a;}
+.contact-item{display:flex;align-items:center;gap:14px;margin-bottom:1.25rem;}
+.contact-icon-box{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.bg-blue{background:#eff6ff;}
+.bg-green{background:#dcfce7;}
+.bg-purple{background:#f3e8ff;}
+.bg-orange{background:#fff7ed;}
+.contact-label{font-size:12px;color:#94a3b8;font-weight:500;}
+.contact-value{font-size:15px;font-weight:700;color:#1a6bff;}
+.contact-form-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:2rem;}
+.contact-form-card h3{font-size:20px;font-weight:700;margin-bottom:1.5rem;color:#0f172a;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:6px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;outline:none;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#1a6bff;box-shadow:0 0 0 3px rgba(26,107,255,0.12);}
+.form-group textarea{height:100px;resize:vertical;}
+.form-submit{width:100%;background:#1a6bff;color:#fff;padding:13px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;}
+.form-submit:hover{background:#0f5ae8;}
+
+/* CTA BOTTOM */
+.cta-bottom{background:linear-gradient(135deg,#0f172a,#1e1b4b);padding:5rem 2rem;text-align:center;color:#fff;}
+.cta-bottom h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;margin-bottom:1rem;letter-spacing:-0.5px;}
+.cta-bottom p{font-size:16px;opacity:0.75;margin-bottom:2rem;}
+.btn-cta-big{background:#1a6bff;color:#fff;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:700;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+
+/* FOOTER */
+footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+.footer-brand .logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:10px;}
+.footer-brand p{font-size:13px;line-height:1.7;color:#64748b;}
+.footer-col h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:12px;}
+.footer-col a{display:block;font-size:13px;color:#64748b;margin-bottom:8px;}
+.footer-col a:hover{color:#1a6bff;}
+.footer-bottom{border-top:1px solid #1e293b;padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-bottom p{font-size:13px;color:#475569;}
+
+/* RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;}
+.result-card{background:linear-gradient(135deg,#1a6bff,#7c3aed);border-radius:16px;padding:2rem;text-align:center;color:#fff;}
+.result-num{font-size:40px;font-weight:800;line-height:1;}
+.result-lbl{font-size:13px;opacity:0.85;margin-top:6px;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero h1{font-size:30px;}
+  .sec-title{font-size:24px;}
+  .about-grid,.contact-grid,.footer-top{grid-template-columns:1fr;}
+  .process-arrow{display:none;}
+  .process-steps{flex-direction:column;align-items:center;gap:16px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:26px;}
+  .hero-btns{flex-direction:column;align-items:stretch;}
+  .hero-stat .num{font-size:22px;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Tanuku <span>Digital Marketing</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="tel:+917995137513" class="nav-cta">📞 Call Now</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+    <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <a href="tel:+917995137513">📞 Call Now</a>
+  </div>
+</nav>
+
+<!-- FREE BANNER -->
+<div class="free-banner">
+  <p>🎁 Get a FREE Digital Marketing Consultation for Your Business!</p>
+  <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20free%20consultation" target="_blank"><button class="btn-white">Book Now on WhatsApp</button></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">⚡ Digital Marketing Agency — Tanuku, Andhra Pradesh</div>
+    <h1>Grow Your Business with<br><span>Professional Digital Marketing</span> Services</h1>
+    <p>We help businesses build a strong online presence through Website Development, SEO, Social Media Marketing, WhatsApp Marketing, Email Marketing, and Digital Advertising.</p>
+    <div class="hero-btns">
+      <a href="tel:+917995137513"><button class="btn-blue">📞 Call Now</button></a>
+      <a href="https://wa.me/917995137513?text=Hi%2C%20I%20am%20interested%20in%20your%20digital%20marketing%20services" target="_blank"><button class="btn-green">💬 WhatsApp Now</button></a>
+      <a href="#contact"><button class="btn-outline">📩 Get Free Consultation</button></a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">50+</div><div class="lbl">Projects Completed</div></div>
+      <div class="hero-stat"><div class="num">100+</div><div class="lbl">Happy Clients</div></div>
+      <div class="hero-stat"><div class="num">7+</div><div class="lbl">Services Offered</div></div>
+      <div class="hero-stat"><div class="num">24/7</div><div class="lbl">Support Available</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section bg-light" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="sec-tag">About Us</span>
+        <h2 class="sec-title">Welcome to Tanuku Digital Marketing</h2>
+        <p>We provide complete digital marketing solutions for businesses, startups, shops, hospitals, schools, restaurants, and professionals across Andhra Pradesh and India.</p>
+        <p>Our goal is simple — help your business reach more customers and generate more leads online. We combine strategy, creativity, and technology to deliver real results for our clients.</p>
+        <p>From building your website from scratch to managing your social media and running paid ads — we handle everything so you can focus on running your business.</p>
+        <div class="about-highlights">
+          <div class="highlight-box"><div class="h-num">50+</div><div class="h-lbl">Projects Done</div></div>
+          <div class="highlight-box"><div class="h-num">100+</div><div class="h-lbl">Happy Clients</div></div>
+          <div class="highlight-box"><div class="h-num">7+</div><div class="h-lbl">Services</div></div>
+          <div class="highlight-box"><div class="h-num">24/7</div><div class="h-lbl">Support</div></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <h3>Your Digital Growth Partner</h3>
+        <p>We are a team of passionate digital marketers based in Tanuku, dedicated to transforming local businesses into powerful online brands. From your first website to your thousandth customer — we are with you every step of the way.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 14px;font-size:13px;font-weight:600;">✅ Affordable for every business size</div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 14px;font-size:13px;font-weight:600;">✅ Experienced team of professionals</div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px 14px;font-size:13px;font-weight:600;">✅ Local experts, pan-India reach</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">What We Offer</span>
+      <h2 class="sec-title">Our Services</h2>
+      <p class="sec-sub">Complete digital solutions — everything your business needs to grow online, under one roof.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <span class="svc-emoji">🌐</span>
+        <div class="svc-name">Website Development</div>
+        <p style="font-size:13px;color:#64748b;line-height:1.7;">Professional websites that attract customers and reflect your brand identity.</p>
+        <div class="svc-tags">
+          <span class="tag">Business Websites</span><span class="tag">Portfolio</span><span class="tag">Landing Pages</span><span class="tag">WordPress</span><span class="tag">Responsive Design</span><span class="tag">Fast Loading</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-emoji">🔧</span>
+        <div class="svc-name">Website Maintenance</div>
+        <p style="font-size:13px;color:#64748b;line-height:1.7;">Keep your website fast, secure, and up-to-date with our monthly care plans.</p>
+        <div class="svc-tags">
+          <span class="tag">Monthly Updates</span><span class="tag">Security</span><span class="tag">Backups</span><span class="tag">Bug Fixes</span><span class="tag">Performance</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-emoji">🔍</span>
+        <div class="svc-name">SEO Services</div>
+        <p style="font-size:13px;color:#64748b;line-height:1.7;">Rank higher on Google and attract organic traffic to grow your business.</p>
+        <div class="svc-tags">
+          <span class="tag">Keyword Research</span><span class="tag">On-Page SEO</span><span class="tag">Technical SEO</span><span class="tag">Local SEO</span><span class="tag">Google Ranking</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-emoji">📱</span>
+        <div class="svc-name">Social Media Management</div>
+        <p style="font-size:13px;color:#64748b;line-height:1.7;">Creative content and consistent posting to grow your social media presence.</p>
+        <div class="svc-tags">
+          <span class="tag">Facebook</span><span class="tag">Instagram</span><span class="tag">LinkedIn</span><span class="tag">Content Creation</span><span class="tag">Daily Posting</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-emoji">📢</span>
+        <div class="svc-name">Digital Advertising</div>
+        <p style="font-size:13px;color:#64748b;line-height:1.7;">Targeted ad campaigns that drive real leads and maximize your ROI.</p>
+        <div class="svc-tags">
+          <span class="tag">Google Ads</span><span class="tag">Facebook Ads</span><span class="tag">Instagram Ads</span><span class="tag">Lead Generation</span><span class="tag">Brand Awareness</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-emoji">💬</span>
+        <div class="svc-name">WhatsApp Marketing</div>
+        <p style="font-size:13px;color:#64748b;line-height:1.7;">Reach your customers directly with bulk WhatsApp messages and broadcasts.</p>
+        <div class="svc-tags">
+          <span class="tag">Bulk Messaging</span><span class="tag">Customer Engagement</span><span class="tag">Promotional Campaigns</span><span class="tag">Broadcast</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <span class="svc-emoji">📧</span>
+        <div class="svc-name">Email Marketing</div>
+        <p style="font-size:13px;color:#64748b;line-height:1.7;">Professional email campaigns that nurture leads and convert them into loyal customers.</p>
+        <div class="svc-tags">
+          <span class="tag">Newsletter Design</span><span class="tag">Promotional Emails</span><span class="tag">Automation</span><span class="tag">Follow-ups</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section bg-light">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">Why Us</span>
+      <h2 class="sec-title">Why Choose Tanuku Digital Marketing?</h2>
+      <p class="sec-sub">We deliver results with professionalism, transparency, and dedication.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-check">💰</div><div class="why-text">Affordable Pricing</div></div>
+      <div class="why-item"><div class="why-check">🏆</div><div class="why-text">Professional Service</div></div>
+      <div class="why-item"><div class="why-check">⚡</div><div class="why-text">Fast Support</div></div>
+      <div class="why-item"><div class="why-check">📱</div><div class="why-text">Mobile Friendly Websites</div></div>
+      <div class="why-item"><div class="why-check">🔍</div><div class="why-text">SEO Optimized</div></div>
+      <div class="why-item"><div class="why-check">🤝</div><div class="why-text">Transparent Communication</div></div>
+      <div class="why-item"><div class="why-check">🛠</div><div class="why-text">Custom Solutions</div></div>
+      <div class="why-item"><div class="why-check">📈</div><div class="why-text">Result-Driven Approach</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section" style="background:#0f172a;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <span class="sec-tag" style="background:rgba(26,107,255,0.2);color:#60a5fa;">Our Results</span>
+      <h2 class="sec-title" style="color:#fff;">Numbers That Speak for Themselves</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">50+</div><div class="result-lbl">Projects Completed</div></div>
+      <div class="result-card" style="background:linear-gradient(135deg,#7c3aed,#db2777);"><div class="result-num">100+</div><div class="result-lbl">Happy Clients</div></div>
+      <div class="result-card" style="background:linear-gradient(135deg,#059669,#0891b2);"><div class="result-num">5+</div><div class="result-lbl">Years Experience</div></div>
+      <div class="result-card" style="background:linear-gradient(135deg,#d97706,#dc2626);"><div class="result-num">24/7</div><div class="result-lbl">Support Available</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">How We Work</span>
+      <h2 class="sec-title">Our Process</h2>
+      <p class="sec-sub">A simple, proven process to deliver results for your business.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-circle">1</div>
+        <div class="step-name">Requirement Discussion</div>
+        <div class="step-desc">We understand your business goals and needs</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="step-circle">2</div>
+        <div class="step-name">Planning</div>
+        <div class="step-desc">We create a tailored digital strategy for you</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="step-circle">3</div>
+        <div class="step-name">Development</div>
+        <div class="step-desc">We build and set up everything you need</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="step-circle">4</div>
+        <div class="step-name">Marketing</div>
+        <div class="step-desc">We launch campaigns and promote your brand</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="step-circle">5</div>
+        <div class="step-name">Results & Support</div>
+        <div class="step-desc">We monitor, optimize, and support you 24/7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section bg-light">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">Industries</span>
+      <h2 class="sec-title">Industries We Serve</h2>
+      <p class="sec-sub">We help businesses of all types build their digital presence.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card"><span class="industry-icon">🏪</span>Local Businesses</div>
+      <div class="industry-card"><span class="industry-icon">🛍</span>Retail Shops</div>
+      <div class="industry-card"><span class="industry-icon">🏥</span>Hospitals</div>
+      <div class="industry-card"><span class="industry-icon">💊</span>Clinics</div>
+      <div class="industry-card"><span class="industry-icon">🏫</span>Schools</div>
+      <div class="industry-card"><span class="industry-icon">🎓</span>Colleges</div>
+      <div class="industry-card"><span class="industry-icon">🍽</span>Restaurants</div>
+      <div class="industry-card"><span class="industry-icon">🏨</span>Hotels</div>
+      <div class="industry-card"><span class="industry-icon">🏠</span>Real Estate</div>
+      <div class="industry-card"><span class="industry-icon">💼</span>Freelancers</div>
+      <div class="industry-card"><span class="industry-icon">🚀</span>Startups</div>
+      <div class="industry-card"><span class="industry-icon">🛒</span>E-commerce</div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGIES -->
+<section class="section">
+  <div class="container" style="text-align:center;">
+    <span class="sec-tag">Tech Stack</span>
+    <h2 class="sec-title">Technologies We Use</h2>
+    <p class="sec-sub" style="margin-bottom:2rem;">We work with the best tools to deliver modern, high-performance solutions.</p>
+    <div class="tech-grid">
+      <span class="tech-pill">WordPress</span>
+      <span class="tech-pill">HTML5</span>
+      <span class="tech-pill">CSS3</span>
+      <span class="tech-pill">JavaScript</span>
+      <span class="tech-pill">PHP</span>
+      <span class="tech-pill">Google Analytics</span>
+      <span class="tech-pill">Google Search Console</span>
+      <span class="tech-pill">Meta Ads</span>
+      <span class="tech-pill">Google Ads</span>
+      <span class="tech-pill">WhatsApp API</span>
+      <span class="tech-pill">Mailchimp</span>
+      <span class="tech-pill">Canva</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="section bg-light">
+  <div class="container" style="text-align:center;">
+    <span class="sec-tag">Service Areas</span>
+    <h2 class="sec-title">📍 Where We Serve</h2>
+    <p class="sec-sub">Based in Tanuku — serving businesses across Andhra Pradesh and India.</p>
+    <div class="areas-grid">
+      <span class="area-pill">📍 Tanuku</span>
+      <span class="area-pill">📍 Bhimavaram</span>
+      <span class="area-pill">📍 Tadepalligudem</span>
+      <span class="area-pill">📍 Rajahmundry</span>
+      <span class="area-pill">📍 Eluru</span>
+      <span class="area-pill">📍 Vijayawada</span>
+      <span class="area-pill">📍 Hyderabad</span>
+      <span class="area-pill">📍 Across India</span>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">Portfolio</span>
+      <h2 class="sec-title">Our Work</h2>
+      <p class="sec-sub">Showcasing websites and campaigns we've built for our clients.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card"><span>🌐</span><p>Business Website — Coming Soon</p></div>
+      <div class="portfolio-card"><span>🛒</span><p>E-commerce Store — Coming Soon</p></div>
+      <div class="portfolio-card"><span>🏥</span><p>Hospital Website — Coming Soon</p></div>
+      <div class="portfolio-card"><span>🍽</span><p>Restaurant Website — Coming Soon</p></div>
+      <div class="portfolio-card"><span>🏫</span><p>School Website — Coming Soon</p></div>
+      <div class="portfolio-card"><span>🚀</span><p>Startup Landing Page — Coming Soon</p></div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;font-size:14px;color:#94a3b8;">Portfolio updating with real projects — <a href="https://wa.me/917995137513" style="color:#1a6bff;font-weight:600;">contact us</a> to see demo work.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section bg-light" id="pricing">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">Pricing</span>
+      <h2 class="sec-title">Simple, Transparent Pricing</h2>
+      <p class="sec-sub">Affordable digital marketing services for every business size.</p>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Service</th><th>Starting Price</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🌐 Website Development</td><td class="price">₹7,499</td><td>Business website with responsive design</td></tr>
+          <tr><td>🔧 Website Maintenance</td><td class="price">₹1,999/month</td><td>Updates, security, backups & support</td></tr>
+          <tr><td>🔍 SEO Services</td><td class="contact-us">Contact Us</td><td>Custom plan based on your requirements</td></tr>
+          <tr><td>📱 Social Media Management</td><td class="contact-us">Contact Us</td><td>Packages based on platforms & posts</td></tr>
+          <tr><td>📢 Digital Advertising</td><td class="contact-us">Contact Us</td><td>Budget-based campaign management</td></tr>
+          <tr><td>💬 WhatsApp Marketing</td><td class="contact-us">Contact Us</td><td>Based on message volume & frequency</td></tr>
+          <tr><td>📧 Email Marketing</td><td class="contact-us">Contact Us</td><td>Per campaign or monthly plans</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;margin-top:1.25rem;font-size:14px;color:#64748b;">All prices are negotiable. <a href="https://wa.me/917995137513" style="color:#1a6bff;font-weight:600;">WhatsApp us</a> for a custom quote.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">Testimonials</span>
+      <h2 class="sec-title">What Our Clients Say</h2>
+      <p class="sec-sub">Real feedback from businesses we've helped grow online.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">Tanuku Digital Marketing helped us build our online presence from scratch. Our shop now gets enquiries through our website every week!</p>
+        <div class="t-author"><div class="t-name">Local Business Owner</div><div class="t-role">Retail Shop, Tanuku</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">Their WhatsApp marketing campaign was very effective. We reached hundreds of customers in one day. Highly recommended for small businesses.</p>
+        <div class="t-author"><div class="t-name">Restaurant Owner</div><div class="t-role">Hotel & Restaurant, Bhimavaram</div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">Professional team, affordable pricing, and great communication. Our school's Facebook page is now growing steadily every month.</p>
+        <div class="t-author"><div class="t-name">School Administrator</div><div class="t-role">Private School, West Godavari</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-light" id="faq">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">FAQ</span>
+      <h2 class="sec-title">Frequently Asked Questions</h2>
+      <p class="sec-sub">Everything you need to know before getting started.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does a website take to build? <span class="faq-toggle">+</span></button>
+        <div class="faq-a">A basic business website typically takes 5–10 working days. More complex websites with custom features may take 2–4 weeks depending on requirements.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you provide website hosting? <span class="faq-toggle">+</span></button>
+        <div class="faq-a">Yes, we can help you with domain registration and hosting setup. We work with reliable hosting providers to ensure your website loads fast and stays secure.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will my website be mobile friendly? <span class="faq-toggle">+</span></button>
+        <div class="faq-a">Absolutely. All websites we build are fully responsive and mobile-friendly. They work perfectly on smartphones, tablets, and desktops.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can you rank my website on Google? <span class="faq-toggle">+</span></button>
+        <div class="faq-a">Yes! Our SEO services are designed to improve your Google rankings. We do keyword research, on-page SEO, local SEO, and off-page SEO to help your website appear in search results.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you provide monthly maintenance? <span class="faq-toggle">+</span></button>
+        <div class="faq-a">Yes, we offer website maintenance plans starting from ₹1,999/month. This includes updates, security monitoring, regular backups, bug fixes, and performance optimization.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How much does SEO cost? <span class="faq-toggle">+</span></button>
+        <div class="faq-a">SEO pricing varies based on your business type, competition level, and goals. We offer custom packages — contact us for a free consultation and quote.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you work with businesses outside Tanuku? <span class="faq-toggle">+</span></button>
+        <div class="faq-a">Yes! While we are based in Tanuku, we serve clients across Andhra Pradesh and all over India. All services can be delivered remotely.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="sec-tag">Contact</span>
+      <h2 class="sec-title">Get in Touch</h2>
+      <p class="sec-sub">We are just a message away — reach out on any channel.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-card">
+          <h3>Contact Information</h3>
+          <div class="contact-item">
+            <div class="contact-icon-box bg-blue">🌐</div>
+            <div><div class="contact-label">Website</div><div class="contact-value">tanukudigitalmarketing.in</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box bg-orange">📞</div>
+            <div><div class="contact-label">Phone</div><div class="contact-value">+91 7995137513</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box bg-green">💬</div>
+            <div><div class="contact-label">WhatsApp</div><div class="contact-value">+91 7995137513</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box bg-purple">📧</div>
+            <div><div class="contact-label">Email</div><div class="contact-value">tanukudigitalmarketing@gmail.com</div></div>
+          </div>
+        </div>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
+          <a href="tel:+917995137513"><button class="btn-blue" style="width:100%;justify-content:center;">📞 Call Now</button></a>
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20free%20consultation" target="_blank"><button class="btn-green" style="width:100%;justify-content:center;">💬 WhatsApp Now</button></a>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <h3>Send a Message</h3>
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="Enter your full name"></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXXXXXXX"></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="form-group">
+          <label>Service Interested In</label>
+          <select>
+            <option>Website Development</option>
+            <option>Website Maintenance</option>
+            <option>SEO Services</option>
+            <option>Social Media Management</option>
+            <option>Digital Advertising</option>
+            <option>WhatsApp Marketing</option>
+            <option>Email Marketing</option>
+            <option>All Services</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your business and requirements..."></textarea></div>
+        <button class="form-submit" onclick="handleFormSubmit()">📩 Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="cta-bottom">
+  <div class="container">
+    <h2>Ready to Grow Your Business?</h2>
+    <p>Join 100+ businesses already growing with Tanuku Digital Marketing.</p>
+    <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20free%20digital%20marketing%20consultation" target="_blank">
+      <button class="btn-cta-big">📩 Get Free Consultation</button>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">Tanuku Digital Marketing</div>
+        <p>Complete digital marketing solutions for businesses across Andhra Pradesh and India. Website Development, SEO, Social Media, WhatsApp & Email Marketing.</p>
+        <div style="margin-top:1rem;display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="tel:+917995137513" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">📞 Call</a>
+          <a href="https://wa.me/917995137513" target="_blank" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">💬 WhatsApp</a>
+          <a href="mailto:tanukudigitalmarketing@gmail.com" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">📧 Email</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Website Development</a>
+        <a href="#services">SEO Services</a>
+        <a href="#services">Social Media</a>
+        <a href="#services">WhatsApp Marketing</a>
+        <a href="#services">Email Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+917995137513">+91 7995137513</a>
+        <a href="mailto:tanukudigitalmarketing@gmail.com">tanukudigitalmarketing@gmail.com</a>
+        <a href="#">tanukudigitalmarketing.in</a>
+        <a href="#">Tanuku, Andhra Pradesh</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tanuku Digital Marketing. All rights reserved.</p>
+      <div style="display:flex;gap:1rem;">
+        <a href="#" style="font-size:13px;color:#475569;">Privacy Policy</a>
+        <a href="#" style="font-size:13px;color:#475569;">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggleFaq(btn){
+  const item = btn.parentElement;
+  item.classList.toggle('open');
+}
+function handleFormSubmit(){
+  const msg = "Hi, I would like to get a free consultation for digital marketing services!";
+  window.open('https://wa.me/917995137513?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
