@@ -807,7 +807,43 @@ function toggleFaq(btn){
   item.classList.toggle('open');
 }
 function handleFormSubmit(){
-  const msg = "Hi, I would like to get a free consultation for digital marketing services!";
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxs-09rg-rIr1o2NhLZKA8ckyeR-_DZEe5uF4KXkzFBEffDkpzcuaAE-ofaRIH8m7El/exec';
+
+  const name    = document.querySelector('input[type="text"]').value.trim();
+  const phone   = document.querySelector('input[type="tel"]').value.trim();
+  const email   = document.querySelector('input[type="email"]').value.trim();
+  const service = document.querySelector('select').value;
+  const message = document.querySelector('textarea').value.trim();
+
+  if(!name || !phone){
+    alert('⚠️ Please enter your Name and Phone number.');
+    return;
+  }
+
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = '⏳ Sending...';
+  btn.disabled = true;
+
+  fetch(scriptURL, {
+    method: 'POST',
+    body: JSON.stringify({ name, phone, email, service, message })
+  })
+  .then(() => {
+    alert('✅ Message sent successfully! We will contact you soon.');
+    document.querySelector('input[type="text"]').value = '';
+    document.querySelector('input[type="tel"]').value = '';
+    document.querySelector('input[type="email"]').value = '';
+    document.querySelector('textarea').value = '';
+  })
+  .catch(() => {
+    alert('❌ Something went wrong. Please WhatsApp us directly.');
+  })
+  .finally(() => {
+    btn.textContent = '📩 Send Message';
+    btn.disabled = false;
+  });
+
+  const msg = `Hi, my name is ${name}. I am interested in ${service}. Please contact me at ${phone}.`;
   window.open('https://wa.me/917995137513?text='+encodeURIComponent(msg),'_blank');
 }
 </script>
