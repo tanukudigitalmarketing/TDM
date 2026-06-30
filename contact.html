@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Tanuku Digital Marketing | Website, SEO & Social Media Experts</title>
+<meta name="description" content="Get in touch with Tanuku Digital Marketing for website development, SEO, social media marketing, email marketing and more. Call, WhatsApp or send us your enquiry — we respond within 24 hours.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* FLOATING BUTTONS */
+.float-wa{position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,0.4);cursor:pointer;transition:transform 0.2s;}
+.float-wa:hover{transform:scale(1.1);}
+.float-quote{position:fixed;bottom:90px;right:16px;z-index:999;background:#1a6bff;color:#fff;padding:10px 16px;border-radius:30px;font-size:13px;font-weight:700;box-shadow:0 4px 16px rgba(26,107,255,0.35);cursor:pointer;white-space:nowrap;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 2rem;}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#1a6bff;}
+.nav-logo span{color:#1a1a1a;}
+.nav-sub{font-size:11px;color:#94a3b8;font-weight:400;display:block;letter-spacing:0.3px;}
+.nav-links{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:500;color:#555;}
+.nav-links > a{padding:8px 14px;border-radius:8px;transition:color 0.2s,background 0.2s;color:#555;}
+.nav-links > a:hover{color:#1a6bff;background:#f0f5ff;}
+
+/* DROPDOWN */
+.nav-dropdown{position:relative;}
+.nav-dropdown > a{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;color:#555;cursor:pointer;transition:color 0.2s,background 0.2s;}
+.nav-dropdown > a:hover{color:#1a6bff;background:#f0f5ff;}
+.nav-dropdown > a::after{content:'▾';font-size:10px;color:#1a6bff;transition:transform 0.2s;}
+.nav-dropdown:hover > a::after{transform:rotate(180deg);}
+.dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:8px;min-width:250px;box-shadow:0 12px 32px rgba(0,0,0,0.1);z-index:200;}
+.nav-dropdown:hover .dropdown-panel{display:block;}
+.dropdown-panel a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#334155;font-size:13px;font-weight:500;transition:all 0.15s;}
+.dropdown-panel a:hover{background:#eff6ff;color:#1a6bff;}
+.dp-icon{width:32px;height:32px;background:#f1f5f9;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:background 0.15s;}
+.dropdown-panel a:hover .dp-icon{background:#dbeafe;}
+.dropdown-label{font-size:11px;color:#94a3b8;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px 4px;}
+.dropdown-divider{height:1px;background:#f1f5f9;margin:6px 0;}
+
+.nav-cta{background:#1a6bff;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px;}
+.mobile-menu{display:none;flex-direction:column;background:#fff;border-bottom:1px solid #e8e8e8;}
+.mobile-menu > a{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;}
+.mobile-menu > a:last-child{color:#1a6bff;font-weight:600;border-bottom:none;}
+.mobile-menu.open{display:flex;}
+.mobile-svc-toggle{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
+.mobile-svc-toggle::after{content:'▾';font-size:11px;color:#1a6bff;transition:transform 0.2s;}
+.mobile-svc-toggle.open::after{transform:rotate(180deg);}
+.mobile-sub{display:none;flex-direction:column;background:#f8fafc;border-bottom:1px solid #f0f0f0;}
+.mobile-sub.open{display:flex;}
+.mobile-sub a{padding:12px 2rem 12px 3rem;font-size:14px;color:#64748b;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;}
+.mobile-sub a:last-child{border-bottom:none;}
+.mobile-sub a:hover{color:#1a6bff;background:#eff6ff;}
+
+/* BREADCRUMB */
+.breadcrumb{background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:10px 2rem;font-size:13px;color:#64748b;}
+.breadcrumb span{color:#1a6bff;}
+
+/* PAGE HEADER */
+.page-header{background:linear-gradient(135deg,#eef4ff 0%,#f0f4ff 50%,#fafbff 100%);padding:4rem 2rem 3rem;position:relative;overflow:hidden;text-align:center;}
+.page-header::before{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(26,107,255,0.08),transparent 70%);border-radius:50%;}
+.page-header-inner{max-width:700px;margin:0 auto;position:relative;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#dbeafe;color:#1a6bff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:1.25rem;border:1px solid #bfdbfe;}
+.page-header h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;line-height:1.2;letter-spacing:-1px;color:#0f172a;margin-bottom:1rem;}
+.page-header h1 span{color:#1a6bff;}
+.page-header p{font-size:16px;color:#475569;line-height:1.75;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:1.75rem;}
+.btn-blue{background:#1a6bff;color:#fff;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;}
+.btn-blue:hover{background:#0f5ae8;}
+.btn-green{background:#25d366;color:#fff;padding:13px 26px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+
+/* SECTIONS */
+.section{padding:5rem 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.sec-tag{display:inline-block;background:#eff6ff;color:#1a6bff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:10px;}
+.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:30px;font-weight:800;color:#0f172a;margin-bottom:8px;letter-spacing:-0.5px;}
+.sec-sub{font-size:15px;color:#64748b;margin-bottom:2.5rem;}
+.bg-light{background:#f8fafc;}
+.center{text-align:center;}
+
+/* QUICK CONTACT CARDS */
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:0;}
+.quick-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.75rem 1.5rem;text-align:center;transition:all 0.2s;}
+.quick-card:hover{box-shadow:0 6px 24px rgba(26,107,255,0.1);border-color:#bfdbfe;transform:translateY(-2px);}
+.quick-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px;}
+.q-bg-blue{background:#eff6ff;}
+.q-bg-green{background:#dcfce7;}
+.q-bg-purple{background:#f3e8ff;}
+.q-bg-orange{background:#fff7ed;}
+.quick-title{font-size:13px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+.quick-value{font-size:15px;font-weight:700;color:#1a6bff;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+.contact-info{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:2rem;}
+.contact-info h3{font-size:20px;font-weight:700;margin-bottom:1.5rem;color:#0f172a;}
+.c-item{display:flex;align-items:center;gap:14px;margin-bottom:1.25rem;}
+.c-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.c-bg-blue{background:#eff6ff;}
+.c-bg-green{background:#dcfce7;}
+.c-bg-purple{background:#f3e8ff;}
+.c-bg-orange{background:#fff7ed;}
+.c-label{font-size:12px;color:#94a3b8;font-weight:500;}
+.c-value{font-size:15px;font-weight:700;color:#1a6bff;}
+.contact-form{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:2rem;}
+.contact-form h3{font-size:20px;font-weight:700;margin-bottom:1.5rem;color:#0f172a;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:5px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;outline:none;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#1a6bff;box-shadow:0 0 0 3px rgba(26,107,255,0.1);}
+.form-group textarea{height:90px;resize:vertical;}
+.form-submit{width:100%;background:#1a6bff;color:#fff;padding:13px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;}
+.form-submit:hover{background:#0f5ae8;}
+
+/* MAP */
+.map-wrap{border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;}
+.map-wrap iframe{width:100%;height:320px;border:0;display:block;}
+
+/* BUSINESS HOURS */
+.hours-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.hours-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:#334155;}
+.hours-item span{color:#1a6bff;}
+
+/* FAQ */
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;}
+.faq-q{width:100%;background:none;border:none;padding:1.1rem 1.5rem;text-align:left;font-size:15px;font-weight:600;color:#0f172a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.faq-q:hover{background:#f8fafc;}
+.faq-toggle{font-size:22px;color:#1a6bff;flex-shrink:0;transition:transform 0.2s;}
+.faq-a{display:none;padding:0 1.5rem 1.1rem;font-size:14px;color:#475569;line-height:1.75;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-toggle{transform:rotate(45deg);}
+
+/* CTA SECTION */
+.cta-section{background:linear-gradient(135deg,#0f172a,#1e1b4b);padding:5rem 2rem;text-align:center;color:#fff;}
+.cta-section h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;margin-bottom:1rem;letter-spacing:-0.5px;}
+.cta-section p{font-size:16px;opacity:0.75;max-width:540px;margin:0 auto 2.5rem;}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.btn-cta-white{background:#fff;color:#1a6bff;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;border:none;cursor:pointer;}
+.btn-cta-green{background:#25d366;color:#fff;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;border:none;cursor:pointer;}
+.btn-cta-outline{background:transparent;color:#fff;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;border:2px solid rgba(255,255,255,0.4);cursor:pointer;}
+
+/* FOOTER */
+footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+.footer-brand .logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#fff;margin-bottom:10px;}
+.footer-brand p{font-size:13px;line-height:1.7;color:#64748b;}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;}
+.footer-col a{display:block;font-size:13px;color:#64748b;margin-bottom:8px;}
+.footer-col a:hover{color:#1a6bff;}
+.footer-bottom{border-top:1px solid #1e293b;padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-bottom p{font-size:13px;color:#475569;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .form-row{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .page-header h1{font-size:26px;}
+  .sec-title{font-size:24px;}
+  .float-quote{display:none;}
+}
+@media(max-width:480px){
+  .page-header{padding:3rem 1.25rem;}
+  .section{padding:3.5rem 1.25rem;}
+  .footer-top{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+  .cta-btns{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/917995137513?text=Hi%2C%20I%20have%20an%20enquiry" target="_blank" class="float-wa" title="Chat on WhatsApp">💬</a>
+<a href="#contact-form" class="float-quote">🚀 Free Quote</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div>
+      <div class="nav-logo">Tanuku <span>Digital Marketing</span></div>
+      <span class="nav-sub">tanukudigitalmarketing.in</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="#services">Services</a>
+        <div class="dropdown-panel">
+          <div class="dropdown-label">Our Services</div>
+          <a href="website-development.html"><span class="dp-icon">🌐</span>Website Development</a>
+          <a href="website-maintenance.html"><span class="dp-icon">🔧</span>Website Maintenance</a>
+          <a href="seo.html"><span class="dp-icon">🔍</span>SEO Services</a>
+          <a href="smm.html"><span class="dp-icon">📱</span>Social Media Marketing</a>
+          <div class="dropdown-divider"></div>
+          <a href="campaigns.html"><span class="dp-icon">📣</span>Ad Campaigns</a>
+          <a href="whatsapp-marketing.html"><span class="dp-icon">💬</span>WhatsApp Marketing</a>
+          <a href="email-marketing.html"><span class="dp-icon">📧</span>Email Marketing</a>
+        </div>
+      </div>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact-form">Contact</a>
+    </div>
+    <a href="tel:+917995137513" class="nav-cta">📞 Call Now</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <div class="mobile-svc-toggle" id="mobileSvcToggle" onclick="toggleMobileSvc()">Services</div>
+    <div class="mobile-sub" id="mobileSub">
+      <a href="website-development.html" onclick="toggleMenu()">🌐 Website Development</a>
+      <a href="website-maintenance.html" onclick="toggleMenu()">🔧 Website Maintenance</a>
+      <a href="seo.html" onclick="toggleMenu()">🔍 SEO Services</a>
+      <a href="smm.html" onclick="toggleMenu()">📱 Social Media Marketing</a>
+      <a href="campaigns.html" onclick="toggleMenu()">📣 Ad Campaigns</a>
+      <a href="whatsapp-marketing.html" onclick="toggleMenu()">💬 WhatsApp Marketing</a>
+      <a href="email-marketing.html" onclick="toggleMenu()">📧 Email Marketing</a>
+    </div>
+    <a href="index.html#pricing" onclick="toggleMenu()">Pricing</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#contact-form" onclick="toggleMenu()">Contact</a>
+    <a href="tel:+917995137513">📞 +91 7995137513</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a> › <span>Contact</span>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="hero-badge">📩 Get In Touch</div>
+    <h1>Let's Talk About Growing <span>Your Business</span></h1>
+    <p>Have a question or ready to get started? Reach out to Tanuku Digital Marketing — we usually respond within 24 hours.</p>
+    <div class="hero-btns">
+      <a href="tel:+917995137513"><button class="btn-blue">📞 Call Now</button></a>
+      <a href="https://wa.me/917995137513?text=Hi%2C%20I%20have%20an%20enquiry%20for%20Tanuku%20Digital%20Marketing" target="_blank"><button class="btn-green">💬 WhatsApp Us</button></a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK CONTACT CARDS -->
+<section class="section">
+  <div class="container">
+    <div class="quick-grid">
+      <a href="tel:+917995137513" class="quick-card">
+        <div class="quick-icon q-bg-orange">📞</div>
+        <div class="quick-title">Call Us</div>
+        <div class="quick-value">+91 7995137513</div>
+      </a>
+      <a href="https://wa.me/917995137513" target="_blank" class="quick-card">
+        <div class="quick-icon q-bg-green">💬</div>
+        <div class="quick-title">WhatsApp</div>
+        <div class="quick-value">+91 7995137513</div>
+      </a>
+      <a href="mailto:tanukudigitalmarketing@gmail.com" class="quick-card">
+        <div class="quick-icon q-bg-purple">📧</div>
+        <div class="quick-title">Email Us</div>
+        <div class="quick-value">tanukudigitalmarketing@gmail.com</div>
+      </a>
+      <div class="quick-card">
+        <div class="quick-icon q-bg-blue">📍</div>
+        <div class="quick-title">Location</div>
+        <div class="quick-value">Tanuku, Andhra Pradesh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM + INFO -->
+<section class="section bg-light" id="contact-form">
+  <div class="container">
+    <div class="center">
+      <span class="sec-tag">Get a Free Quote</span>
+      <h2 class="sec-title">Contact Tanuku Digital Marketing</h2>
+      <p class="sec-sub">Tell us about your business and we'll get back to you with a free quote within 24 hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info">
+          <h3>Tanuku Digital Marketing</h3>
+          <div class="c-item"><div class="c-icon c-bg-blue">🌐</div><div><div class="c-label">Website</div><div class="c-value">tanukudigitalmarketing.in</div></div></div>
+          <div class="c-item"><div class="c-icon c-bg-orange">📞</div><div><div class="c-label">Phone</div><div class="c-value">+91 7995137513</div></div></div>
+          <div class="c-item"><div class="c-icon c-bg-green">💬</div><div><div class="c-label">WhatsApp</div><div class="c-value">+91 7995137513</div></div></div>
+          <div class="c-item"><div class="c-icon c-bg-purple">📧</div><div><div class="c-label">Email</div><div class="c-value">tanukudigitalmarketing@gmail.com</div></div></div>
+        </div>
+        <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;">
+          <a href="tel:+917995137513"><button class="btn-blue" style="width:100%;justify-content:center;">📞 Call Now</button></a>
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20have%20an%20enquiry%20for%20Tanuku%20Digital%20Marketing" target="_blank"><button class="btn-green" style="width:100%;justify-content:center;">💬 WhatsApp Now</button></a>
+        </div>
+        <div class="map-wrap" style="margin-top:1.5rem;">
+          <iframe src="https://www.google.com/maps?q=Tanuku,Andhra+Pradesh&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Your Name *</label><input type="text" id="ct-name" placeholder="Full name"></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" id="ct-phone" placeholder="+91 XXXXXXXXXX"></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="ct-email" placeholder="your@email.com"></div>
+        <div class="form-group">
+          <label>Service Interested In *</label>
+          <select id="ct-type">
+            <option>Website Development</option>
+            <option>Website Maintenance</option>
+            <option>SEO Services</option>
+            <option>Social Media Marketing</option>
+            <option>Ad Campaigns</option>
+            <option>WhatsApp Marketing</option>
+            <option>Email Marketing</option>
+            <option>Not Sure / Need Advice</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Your Message</label><textarea id="ct-msg" placeholder="Tell us about your business and what you need..."></textarea></div>
+        <button class="form-submit" onclick="handleFormSubmit()">🚀 Send My Request</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS HOURS -->
+<section class="section">
+  <div class="container">
+    <div class="center">
+      <span class="sec-tag">When We're Available</span>
+      <h2 class="sec-title">Business Hours</h2>
+      <p class="sec-sub">Reach out anytime — WhatsApp messages are answered even outside these hours.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-item">Monday – Saturday <span>9:00 AM – 7:00 PM</span></div>
+      <div class="hours-item">Sunday <span>By Appointment</span></div>
+      <div class="hours-item">WhatsApp Support <span>24/7</span></div>
+      <div class="hours-item">Email Response <span>Within 24 Hrs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-light" id="faq">
+  <div class="container">
+    <div class="center">
+      <span class="sec-tag">FAQ</span>
+      <h2 class="sec-title">Frequently Asked Questions</h2>
+      <p class="sec-sub">Got questions about getting in touch? We have answers.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How quickly will you respond? <span class="faq-toggle">+</span></button><div class="faq-a">We typically respond within 24 hours. WhatsApp messages are often answered much faster, even outside business hours.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the first consultation free? <span class="faq-toggle">+</span></button><div class="faq-a">Yes, the initial consultation and quote are completely free with no obligation to proceed.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you work with businesses outside Tanuku? <span class="faq-toggle">+</span></button><div class="faq-a">Yes, we work with businesses across Andhra Pradesh and India. Most of our work is done remotely over calls and WhatsApp.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What information should I include in my enquiry? <span class="faq-toggle">+</span></button><div class="faq-a">Just tell us about your business, which service you're interested in, and your budget if you have one in mind — we'll take care of the rest.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I just call instead of filling the form? <span class="faq-toggle">+</span></button><div class="faq-a">Of course! You can call or WhatsApp us directly at +91 7995137513 anytime.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Get Started?</h2>
+    <p>Let Tanuku Digital Marketing help you grow your business online. Get a free consultation today — no obligation.</p>
+    <div class="cta-btns">
+      <a href="tel:+917995137513"><button class="btn-cta-white">📞 Call Now</button></a>
+      <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20online" target="_blank"><button class="btn-cta-green">💬 Chat on WhatsApp</button></a>
+      <a href="#contact-form"><button class="btn-cta-outline">📩 Get a Free Quote</button></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">Tanuku Digital Marketing</div>
+        <p>Professional digital marketing services for businesses across Andhra Pradesh and India. Website Development · Website Maintenance · SEO · Social Media Marketing · Email Marketing.</p>
+        <div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
+          <a href="tel:+917995137513" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">📞 Call</a>
+          <a href="https://wa.me/917995137513" target="_blank" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">💬 WhatsApp</a>
+          <a href="mailto:tanukudigitalmarketing@gmail.com" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">📧 Email</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="#contact-form">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="website-development.html">Website Development</a>
+        <a href="website-maintenance.html">Website Maintenance</a>
+        <a href="seo.html">SEO Services</a>
+        <a href="smm.html">Social Media Marketing</a>
+        <a href="whatsapp-marketing.html">WhatsApp Marketing</a>
+        <a href="email-marketing.html">Email Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+917995137513">+91 7995137513</a>
+        <a href="mailto:tanukudigitalmarketing@gmail.com">tanukudigitalmarketing@gmail.com</a>
+        <a href="#">tanukudigitalmarketing.in</a>
+        <a href="#">Tanuku, Andhra Pradesh</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tanuku Digital Marketing. All rights reserved.</p>
+      <div style="display:flex;gap:1rem;">
+        <a href="#" style="font-size:13px;color:#475569;">Privacy Policy</a>
+        <a href="#" style="font-size:13px;color:#475569;">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function toggleMobileSvc(){
+  document.getElementById('mobileSub').classList.toggle('open');
+  document.getElementById('mobileSvcToggle').classList.toggle('open');
+}
+function toggleFaq(btn){btn.parentElement.classList.toggle('open');}
+
+function handleFormSubmit(){
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxs-09rg-rIr1o2NhLZKA8ckyeR-_DZEe5uF4KXkzFBEffDkpzcuaAE-ofaRIH8m7El/exec';
+
+  const name    = document.getElementById('ct-name').value.trim();
+  const phone   = document.getElementById('ct-phone').value.trim();
+  const email   = document.getElementById('ct-email').value.trim();
+  const service = document.getElementById('ct-type').value;
+  const message = document.getElementById('ct-msg').value.trim();
+
+  if(!name || !phone){
+    alert('⚠️ Please enter your Name and Phone number.');
+    return;
+  }
+
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = '⏳ Sending...';
+  btn.disabled = true;
+
+  fetch(scriptURL, {
+    method: 'POST',
+    body: JSON.stringify({ name, phone, email, service, message })
+  })
+  .then(() => {
+    alert('✅ Request sent! We will contact you within 24 hours.');
+    document.getElementById('ct-name').value='';
+    document.getElementById('ct-phone').value='';
+    document.getElementById('ct-email').value='';
+    document.getElementById('ct-msg').value='';
+  })
+  .catch(() => {
+    alert('❌ Something went wrong. Please WhatsApp us directly.');
+  })
+  .finally(()=>{
+    btn.textContent='🚀 Send My Request';
+    btn.disabled=false;
+  });
+
+  const msg = `Hi, my name is ${name}. I am interested in ${service}. Please contact me at ${phone}.`;
+  window.open('https://wa.me/917995137513?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
