@@ -215,7 +215,36 @@ footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
     <div class="nav-logo">Tanuku <span>Digital Marketing</span></div>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="website-development.html">Services</a>
+
+      <div class="nav-dropdown">
+        <a href="#services">Services</a>
+        <div class="dropdown-panel">
+          <div class="dropdown-footer">Our Services</div>
+          <a href="website-development.html">
+            <span class="dp-icon">🌐</span> Website Development
+          </a>
+          <a href="website-maintenance.html">
+            <span class="dp-icon">🔧</span> Website Maintenance
+          </a>
+          <a href="seo.html">
+            <span class="dp-icon">🔍</span> SEO Services
+          </a>
+          <a href="smm.html">
+            <span class="dp-icon">📱</span> Social Media Marketing
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="campaigns.html">
+            <span class="dp-icon">📣</span> Ad Campaigns
+          </a>
+          <a href="whatsapp-marketing.html">
+            <span class="dp-icon">💬</span> WhatsApp Marketing
+          </a>
+          <a href="email-marketing.html">
+            <span class="dp-icon">📧</span> Email Marketing
+          </a>
+        </div>
+      </div>
+
       <a href="#pricing">Pricing</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
@@ -225,9 +254,21 @@ footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
       <span></span><span></span><span></span>
     </button>
   </div>
+
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="toggleMenu()">About</a>
-    <a href="website-development.html" onclick="toggleMenu()">Services</a>
+
+    <a class="mobile-services-toggle" id="mobileServicesToggle" onclick="toggleServices(event)">Services</a>
+    <div class="mobile-sub" id="mobileSub">
+      <a href="website-development.html" onclick="toggleMenu()"><span class="mobile-sub-icon">🌐</span> Website Development</a>
+      <a href="website-maintenance.html" onclick="toggleMenu()"><span class="mobile-sub-icon">🔧</span> Website Maintenance</a>
+      <a href="seo.html" onclick="toggleMenu()"><span class="mobile-sub-icon">🔍</span> SEO Services</a>
+      <a href="smm.html" onclick="toggleMenu()"><span class="mobile-sub-icon">📱</span> Social Media Marketing</a>
+      <a href="campaigns.html" onclick="toggleMenu()"><span class="mobile-sub-icon">📣</span> Ad Campaigns</a>
+      <a href="whatsapp-marketing.html" onclick="toggleMenu()"><span class="mobile-sub-icon">💬</span> WhatsApp Marketing</a>
+      <a href="email-marketing.html" onclick="toggleMenu()"><span class="mobile-sub-icon">📧</span> Email Marketing</a>
+    </div>
+
     <a href="#pricing" onclick="toggleMenu()">Pricing</a>
     <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
