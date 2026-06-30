@@ -17,14 +17,43 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
 .nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:#1a6bff;}
 .nav-logo span{color:#1a1a1a;}
-.nav-links{display:flex;gap:1.8rem;font-size:14px;font-weight:500;color:#555;}
-.nav-links a:hover{color:#1a6bff;}
+.nav-links{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:500;color:#555;}
+.nav-links > a{padding:8px 14px;border-radius:8px;transition:color 0.2s,background 0.2s;color:#555;}
+.nav-links > a:hover{color:#1a6bff;background:#f0f5ff;}
+
+/* DROPDOWN */
+.nav-dropdown{position:relative;}
+.nav-dropdown > a{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;color:#555;cursor:pointer;transition:color 0.2s,background 0.2s;}
+.nav-dropdown > a:hover{color:#1a6bff;background:#f0f5ff;}
+.nav-dropdown > a::after{content:'▾';font-size:10px;color:#1a6bff;transition:transform 0.2s;}
+.nav-dropdown:hover > a::after{transform:rotate(180deg);}
+.dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:8px;min-width:250px;box-shadow:0 12px 32px rgba(0,0,0,0.1);z-index:200;}
+.nav-dropdown:hover .dropdown-panel{display:block;}
+.dropdown-panel a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#334155;font-size:13px;font-weight:500;transition:all 0.15s;}
+.dropdown-panel a:hover{background:#eff6ff;color:#1a6bff;}
+.dp-icon{width:32px;height:32px;background:#f1f5f9;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:background 0.15s;}
+.dropdown-panel a:hover .dp-icon{background:#dbeafe;}
+.dropdown-label{font-size:11px;color:#94a3b8;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px 4px;}
+.dropdown-divider{height:1px;background:#f1f5f9;margin:6px 0;}
+
+/* MOBILE */
 .nav-cta{background:#1a6bff;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
 .hamburger span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px;}
-.mobile-menu{display:none;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid #e8e8e8;}
-.mobile-menu a{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;}
+.mobile-menu{display:none;flex-direction:column;background:#fff;border-bottom:1px solid #e8e8e8;}
+.mobile-menu > a{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;}
+.mobile-menu > a:last-child{color:#1a6bff;font-weight:600;border-bottom:none;}
 .mobile-menu.open{display:flex;}
+
+/* Mobile services toggle */
+.mobile-svc-toggle{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
+.mobile-svc-toggle::after{content:'▾';font-size:11px;color:#1a6bff;transition:transform 0.2s;}
+.mobile-svc-toggle.open::after{transform:rotate(180deg);}
+.mobile-sub{display:none;flex-direction:column;background:#f8fafc;border-bottom:1px solid #f0f0f0;}
+.mobile-sub.open{display:flex;}
+.mobile-sub a{padding:12px 2rem 12px 3rem;font-size:14px;color:#64748b;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;}
+.mobile-sub a:last-child{border-bottom:none;}
+.mobile-sub a:hover{color:#1a6bff;background:#eff6ff;}
 
 /* HERO */
 .hero{background:linear-gradient(135deg,#eef4ff 0%,#f0f9ff 60%,#fff 100%);padding:5rem 2rem 4rem;text-align:center;}
@@ -219,29 +248,15 @@ footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
       <div class="nav-dropdown">
         <a href="#services">Services</a>
         <div class="dropdown-panel">
-          <div class="dropdown-footer">Our Services</div>
-          <a href="website-development.html">
-            <span class="dp-icon">🌐</span> Website Development
-          </a>
-          <a href="website-maintenance.html">
-            <span class="dp-icon">🔧</span> Website Maintenance
-          </a>
-          <a href="seo.html">
-            <span class="dp-icon">🔍</span> SEO Services
-          </a>
-          <a href="smm.html">
-            <span class="dp-icon">📱</span> Social Media Marketing
-          </a>
+          <div class="dropdown-label">Our Services</div>
+          <a href="website-development.html"><span class="dp-icon">🌐</span>Website Development</a>
+          <a href="website-maintenance.html"><span class="dp-icon">🔧</span>Website Maintenance</a>
+          <a href="seo.html"><span class="dp-icon">🔍</span>SEO Services</a>
+          <a href="smm.html"><span class="dp-icon">📱</span>Social Media Marketing</a>
           <div class="dropdown-divider"></div>
-          <a href="campaigns.html">
-            <span class="dp-icon">📣</span> Ad Campaigns
-          </a>
-          <a href="whatsapp-marketing.html">
-            <span class="dp-icon">💬</span> WhatsApp Marketing
-          </a>
-          <a href="email-marketing.html">
-            <span class="dp-icon">📧</span> Email Marketing
-          </a>
+          <a href="campaigns.html"><span class="dp-icon">📣</span>Ad Campaigns</a>
+          <a href="whatsapp-marketing.html"><span class="dp-icon">💬</span>WhatsApp Marketing</a>
+          <a href="email-marketing.html"><span class="dp-icon">📧</span>Email Marketing</a>
         </div>
       </div>
 
@@ -257,18 +272,16 @@ footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="toggleMenu()">About</a>
-
-    <a class="mobile-services-toggle" id="mobileServicesToggle" onclick="toggleServices(event)">Services</a>
+    <div class="mobile-svc-toggle" id="mobileSvcToggle" onclick="toggleMobileSvc()">Services</div>
     <div class="mobile-sub" id="mobileSub">
-      <a href="website-development.html" onclick="toggleMenu()"><span class="mobile-sub-icon">🌐</span> Website Development</a>
-      <a href="website-maintenance.html" onclick="toggleMenu()"><span class="mobile-sub-icon">🔧</span> Website Maintenance</a>
-      <a href="seo.html" onclick="toggleMenu()"><span class="mobile-sub-icon">🔍</span> SEO Services</a>
-      <a href="smm.html" onclick="toggleMenu()"><span class="mobile-sub-icon">📱</span> Social Media Marketing</a>
-      <a href="campaigns.html" onclick="toggleMenu()"><span class="mobile-sub-icon">📣</span> Ad Campaigns</a>
-      <a href="whatsapp-marketing.html" onclick="toggleMenu()"><span class="mobile-sub-icon">💬</span> WhatsApp Marketing</a>
-      <a href="email-marketing.html" onclick="toggleMenu()"><span class="mobile-sub-icon">📧</span> Email Marketing</a>
+      <a href="website-development.html" onclick="toggleMenu()">🌐 Website Development</a>
+      <a href="website-maintenance.html" onclick="toggleMenu()">🔧 Website Maintenance</a>
+      <a href="seo.html" onclick="toggleMenu()">🔍 SEO Services</a>
+      <a href="smm.html" onclick="toggleMenu()">📱 Social Media Marketing</a>
+      <a href="campaigns.html" onclick="toggleMenu()">📣 Ad Campaigns</a>
+      <a href="whatsapp-marketing.html" onclick="toggleMenu()">💬 WhatsApp Marketing</a>
+      <a href="email-marketing.html" onclick="toggleMenu()">📧 Email Marketing</a>
     </div>
-
     <a href="#pricing" onclick="toggleMenu()">Pricing</a>
     <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
@@ -757,11 +770,11 @@ footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="#services">Website Development</a>
-        <a href="#services">SEO Services</a>
-        <a href="#services">Social Media</a>
-        <a href="#services">WhatsApp Marketing</a>
-        <a href="#services">Email Marketing</a>
+        <a href="website-development.html">Website Development</a>
+        <a href="seo.html">SEO Services</a>
+        <a href="smm.html">Social Media</a>
+        <a href="whatsapp-marketing.html">WhatsApp Marketing</a>
+        <a href="email-marketing.html">Email Marketing</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -784,6 +797,10 @@ footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
 <script>
 function toggleMenu(){
   document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggleMobileSvc(){
+  document.getElementById('mobileSub').classList.toggle('open');
+  document.getElementById('mobileSvcToggle').classList.toggle('open');
 }
 function toggleFaq(btn){
   const item = btn.parentElement;
