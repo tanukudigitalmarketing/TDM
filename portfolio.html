@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Our Work | Tanuku Digital Marketing</title>
+<meta name="description" content="Explore our portfolio of real websites and digital projects built for clients across Andhra Pradesh and India. See our work in website development, SEO, and digital marketing.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* FLOATING */
+.float-wa{position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,0.4);cursor:pointer;transition:transform 0.2s;}
+.float-wa:hover{transform:scale(1.1);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 2rem;}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;color:#1a6bff;}
+.nav-logo span{color:#1a1a1a;}
+.nav-sub{font-size:11px;color:#94a3b8;font-weight:400;display:block;letter-spacing:0.3px;}
+.nav-links{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:500;}
+.nav-links > a{padding:8px 14px;border-radius:8px;color:#555;transition:color 0.2s,background 0.2s;}
+.nav-links > a:hover{color:#1a6bff;background:#f0f5ff;}
+.nav-dropdown{position:relative;}
+.nav-dropdown > a{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;color:#555;cursor:pointer;transition:color 0.2s,background 0.2s;}
+.nav-dropdown > a:hover{color:#1a6bff;background:#f0f5ff;}
+.nav-dropdown > a::after{content:'▾';font-size:10px;color:#1a6bff;transition:transform 0.2s;}
+.nav-dropdown:hover > a::after{transform:rotate(180deg);}
+.dropdown-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:8px;min-width:250px;box-shadow:0 12px 32px rgba(0,0,0,0.1);z-index:200;}
+.nav-dropdown:hover .dropdown-panel{display:block;}
+.dropdown-panel a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;color:#334155;font-size:13px;font-weight:500;transition:all 0.15s;}
+.dropdown-panel a:hover{background:#eff6ff;color:#1a6bff;}
+.dp-icon{width:32px;height:32px;background:#f1f5f9;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:background 0.15s;}
+.dropdown-panel a:hover .dp-icon{background:#dbeafe;}
+.dropdown-label{font-size:11px;color:#94a3b8;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 14px 4px;}
+.dropdown-divider{height:1px;background:#f1f5f9;margin:6px 0;}
+.nav-cta{background:#1a6bff;color:#fff;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px;}
+.mobile-menu{display:none;flex-direction:column;background:#fff;border-bottom:1px solid #e8e8e8;}
+.mobile-menu > a{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;}
+.mobile-menu > a:last-child{color:#1a6bff;font-weight:600;border-bottom:none;}
+.mobile-menu.open{display:flex;}
+.mobile-svc-toggle{padding:14px 2rem;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
+.mobile-svc-toggle::after{content:'▾';font-size:11px;color:#1a6bff;transition:transform 0.2s;}
+.mobile-svc-toggle.open::after{transform:rotate(180deg);}
+.mobile-sub{display:none;flex-direction:column;background:#f8fafc;border-bottom:1px solid #f0f0f0;}
+.mobile-sub.open{display:flex;}
+.mobile-sub a{padding:12px 2rem 12px 3rem;font-size:14px;color:#64748b;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;}
+.mobile-sub a:last-child{border-bottom:none;}
+.mobile-sub a:hover{color:#1a6bff;background:#eff6ff;}
+
+/* BREADCRUMB */
+.breadcrumb{background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:10px 2rem;font-size:13px;color:#64748b;}
+.breadcrumb span{color:#1a6bff;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#eef4ff 0%,#f0f9ff 60%,#fff 100%);padding:4rem 2rem 3rem;text-align:center;}
+.hero-inner{max-width:700px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#dbeafe;color:#1a6bff;font-size:12px;font-weight:700;padding:5px 16px;border-radius:20px;margin-bottom:1.25rem;border:1px solid #bfdbfe;}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:42px;font-weight:800;line-height:1.15;letter-spacing:-1px;color:#0f172a;margin-bottom:1rem;}
+.hero h1 span{color:#1a6bff;}
+.hero p{font-size:16px;color:#475569;line-height:1.75;margin-bottom:2rem;}
+.hero-stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem;}
+.hero-stat .num{font-size:28px;font-weight:800;color:#1a6bff;}
+.hero-stat .lbl{font-size:13px;color:#64748b;margin-top:2px;}
+
+/* FILTER TABS */
+.filter-section{padding:2rem 2rem 0;max-width:1100px;margin:0 auto;}
+.filter-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:2.5rem;}
+.filter-btn{background:#f1f5f9;color:#64748b;border:1.5px solid #e2e8f0;padding:8px 20px;border-radius:50px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;}
+.filter-btn:hover,.filter-btn.active{background:#1a6bff;color:#fff;border-color:#1a6bff;}
+
+/* PORTFOLIO GRID */
+.portfolio-section{padding:0 2rem 5rem;}
+.portfolio-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;}
+.portfolio-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;overflow:hidden;transition:all 0.25s;position:relative;}
+.portfolio-card:hover{box-shadow:0 12px 40px rgba(26,107,255,0.13);transform:translateY(-4px);border-color:#bfdbfe;}
+
+/* SCREENSHOT PREVIEW */
+.card-preview{height:200px;position:relative;overflow:hidden;background:#f1f5f9;}
+.card-preview iframe{width:200%;height:200%;transform:scale(0.5);transform-origin:top left;border:none;pointer-events:none;}
+.card-preview-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(15,23,42,0.08));}
+.card-tag{position:absolute;top:14px;left:14px;background:#1a6bff;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.5px;}
+.card-live{position:absolute;top:14px;right:14px;background:#22c55e;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:4px;}
+.live-dot{width:6px;height:6px;background:#fff;border-radius:50%;animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* CARD BODY */
+.card-body{padding:1.5rem;}
+.card-domain{font-size:12px;color:#94a3b8;font-weight:500;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.card-domain::before{content:'🌐';font-size:11px;}
+.card-title{font-size:18px;font-weight:800;color:#0f172a;margin-bottom:8px;}
+.card-desc{font-size:13px;color:#64748b;line-height:1.7;margin-bottom:14px;}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.c-tag{background:#f1f5f9;color:#475569;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;}
+.card-footer{display:flex;gap:10px;}
+.btn-visit{flex:1;background:#1a6bff;color:#fff;padding:10px;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;transition:background 0.2s;}
+.btn-visit:hover{background:#0f5ae8;}
+.btn-wa{background:#f1f5f9;color:#334155;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all 0.2s;}
+.btn-wa:hover{background:#dcfce7;color:#15803d;}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,#0f172a,#1e1b4b);padding:5rem 2rem;text-align:center;color:#fff;}
+.cta-section h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;margin-bottom:1rem;}
+.cta-section p{font-size:16px;opacity:0.75;max-width:520px;margin:0 auto 2.5rem;}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.btn-cta-white{background:#fff;color:#1a6bff;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;border:none;cursor:pointer;}
+.btn-cta-green{background:#25d366;color:#fff;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;border:none;cursor:pointer;}
+
+/* FOOTER */
+footer{background:#0f172a;color:#94a3b8;padding:3rem 2rem 1.5rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+.footer-brand .logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#fff;margin-bottom:10px;}
+.footer-brand p{font-size:13px;line-height:1.7;color:#64748b;}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;}
+.footer-col a{display:block;font-size:13px;color:#64748b;margin-bottom:8px;}
+.footer-col a:hover{color:#1a6bff;}
+.footer-bottom{border-top:1px solid #1e293b;padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-bottom p{font-size:13px;color:#475569;}
+
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero h1{font-size:28px;}
+  .portfolio-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .footer-top{grid-template-columns:1fr;}
+  .hero-stats{gap:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20website%20like%20your%20portfolio" target="_blank" class="float-wa" title="WhatsApp">💬</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div>
+      <div class="nav-logo">Tanuku <span>Digital Marketing</span></div>
+      <span class="nav-sub">tanukudigitalmarketing.in</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="index.html#services">Services</a>
+        <div class="dropdown-panel">
+          <div class="dropdown-label">Our Services</div>
+          <a href="website-development.html"><span class="dp-icon">🌐</span>Website Development</a>
+          <a href="website-maintenance.html"><span class="dp-icon">🔧</span>Website Maintenance</a>
+          <a href="seo.html"><span class="dp-icon">🔍</span>SEO Services</a>
+          <a href="smm.html"><span class="dp-icon">📱</span>Social Media Marketing</a>
+          <div class="dropdown-divider"></div>
+          <a href="campaigns.html"><span class="dp-icon">📣</span>Ad Campaigns</a>
+          <a href="whatsapp-marketing.html"><span class="dp-icon">💬</span>WhatsApp Marketing</a>
+          <a href="email-marketing.html"><span class="dp-icon">📧</span>Email Marketing</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="color:#1a6bff;font-weight:700;">Portfolio</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="tel:+917995137513" class="nav-cta">📞 Call Now</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <div class="mobile-svc-toggle" id="mobileSvcToggle" onclick="toggleMobileSvc()">Services</div>
+    <div class="mobile-sub" id="mobileSub">
+      <a href="website-development.html" onclick="toggleMenu()">🌐 Website Development</a>
+      <a href="website-maintenance.html" onclick="toggleMenu()">🔧 Website Maintenance</a>
+      <a href="seo.html" onclick="toggleMenu()">🔍 SEO Services</a>
+      <a href="smm.html" onclick="toggleMenu()">📱 Social Media Marketing</a>
+      <a href="campaigns.html" onclick="toggleMenu()">📣 Ad Campaigns</a>
+      <a href="whatsapp-marketing.html" onclick="toggleMenu()">💬 WhatsApp Marketing</a>
+      <a href="email-marketing.html" onclick="toggleMenu()">📧 Email Marketing</a>
+    </div>
+    <a href="portfolio.html" onclick="toggleMenu()" style="color:#1a6bff;font-weight:700;">Portfolio</a>
+    <a href="index.html#pricing" onclick="toggleMenu()">Pricing</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+    <a href="tel:+917995137513">📞 +91 7995137513</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a> › <span>Portfolio</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">💼 Our Work</div>
+    <h1>Real Projects,<br><span>Real Results</span></h1>
+    <p>We have built websites and digital solutions for businesses across India. Here are some of our live projects — click to visit them directly.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">5+</div><div class="lbl">Live Projects</div></div>
+      <div class="hero-stat"><div class="num">100+</div><div class="lbl">Happy Clients</div></div>
+      <div class="hero-stat"><div class="num">24/7</div><div class="lbl">Support</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div class="filter-section">
+  <div class="filter-tabs">
+    <button class="filter-btn active" onclick="filterCards('all',this)">All Projects</button>
+    <button class="filter-btn" onclick="filterCards('finance',this)">Finance & Loans</button>
+    <button class="filter-btn" onclick="filterCards('sports',this)">Sports</button>
+    <button class="filter-btn" onclick="filterCards('entertainment',this)">Entertainment</button>
+    <button class="filter-btn" onclick="filterCards('business',this)">Business</button>
+  </div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<div class="portfolio-section">
+  <div class="portfolio-grid" id="portfolioGrid">
+
+    <!-- banksadda.com -->
+    <div class="portfolio-card" data-cat="finance">
+      <div class="card-preview" style="background:linear-gradient(135deg,#1e3a5f,#2563eb);">
+        <div style="padding:20px;color:#fff;">
+          <div style="font-size:22px;font-weight:800;margin-bottom:8px;">BankSadda</div>
+          <div style="font-size:12px;opacity:0.75;margin-bottom:16px;">Banking & Finance Information Portal</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">🏦 Bank Reviews & Comparisons</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">💳 Credit Card Guides</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">📊 Financial News & Tips</div>
+          </div>
+        </div>
+        <div class="card-preview-overlay"></div>
+      </div>
+      <div class="card-tag">Finance</div>
+      <div class="card-live"><div class="live-dot"></div>Live</div>
+      <div class="card-body">
+        <div class="card-domain">banksadda.com</div>
+        <div class="card-title">BankSadda — Banking Information Portal</div>
+        <div class="card-desc">A comprehensive banking and finance information website covering bank reviews, credit card comparisons, loan guides, and financial tips for Indian consumers.</div>
+        <div class="card-tags">
+          <span class="c-tag">Finance</span>
+          <span class="c-tag">Information Portal</span>
+          <span class="c-tag">SEO</span>
+          <span class="c-tag">Blog</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://banksadda.com" target="_blank" class="btn-visit">🌐 Visit Website</a>
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20website%20like%20banksadda.com" target="_blank" class="btn-wa">💬 Similar Site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- rjsportsclub.com -->
+    <div class="portfolio-card" data-cat="sports">
+      <div class="card-preview" style="background:linear-gradient(135deg,#064e3b,#059669);">
+        <div style="padding:20px;color:#fff;">
+          <div style="font-size:22px;font-weight:800;margin-bottom:8px;">RJ Sports Club</div>
+          <div style="font-size:12px;opacity:0.75;margin-bottom:16px;">Sports Club & Academy Website</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">⚽ Sports Activities & Events</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">🏆 Tournament Management</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">👥 Member Registration</div>
+          </div>
+        </div>
+        <div class="card-preview-overlay"></div>
+      </div>
+      <div class="card-tag">Sports</div>
+      <div class="card-live"><div class="live-dot"></div>Live</div>
+      <div class="card-body">
+        <div class="card-domain">rjsportsclub.com</div>
+        <div class="card-title">RJ Sports Club — Sports Academy Website</div>
+        <div class="card-desc">A dynamic sports club website featuring team information, tournament schedules, membership registration, and event management for a thriving sports community.</div>
+        <div class="card-tags">
+          <span class="c-tag">Sports</span>
+          <span class="c-tag">Club Website</span>
+          <span class="c-tag">Events</span>
+          <span class="c-tag">Membership</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://rjsportsclub.com" target="_blank" class="btn-visit">🌐 Visit Website</a>
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20website%20like%20rjsportsclub.com" target="_blank" class="btn-wa">💬 Similar Site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- dsaloanagent.in -->
+    <div class="portfolio-card" data-cat="finance">
+      <div class="card-preview" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);">
+        <div style="padding:20px;color:#fff;">
+          <div style="font-size:22px;font-weight:800;margin-bottom:8px;">DSA Loan Agent</div>
+          <div style="font-size:12px;opacity:0.75;margin-bottom:16px;">Loan Agent & DSA Platform</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">🏠 Home Loan Services</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">🚗 Vehicle Loan Solutions</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">💼 Business Loan Guidance</div>
+          </div>
+        </div>
+        <div class="card-preview-overlay"></div>
+      </div>
+      <div class="card-tag">Finance</div>
+      <div class="card-live"><div class="live-dot"></div>Live</div>
+      <div class="card-body">
+        <div class="card-domain">dsaloanagent.in</div>
+        <div class="card-title">DSA Loan Agent — Loan Services Platform</div>
+        <div class="card-desc">A professional loan agent website helping customers apply for home loans, personal loans, vehicle loans and business loans with easy inquiry forms and expert guidance.</div>
+        <div class="card-tags">
+          <span class="c-tag">Finance</span>
+          <span class="c-tag">Loan Services</span>
+          <span class="c-tag">Lead Gen</span>
+          <span class="c-tag">DSA Platform</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://dsaloanagent.in" target="_blank" class="btn-visit">🌐 Visit Website</a>
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20website%20like%20dsaloanagent.in" target="_blank" class="btn-wa">💬 Similar Site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- loanloop.in -->
+    <div class="portfolio-card" data-cat="finance">
+      <div class="card-preview" style="background:linear-gradient(135deg,#0f172a,#1a6bff);">
+        <div style="padding:20px;color:#fff;">
+          <div style="font-size:22px;font-weight:800;margin-bottom:8px;">LoanLoop</div>
+          <div style="font-size:12px;opacity:0.75;margin-bottom:16px;">Smart Loan Comparison Platform</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">🔄 Loan Comparison Tool</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">📋 Easy Application Process</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">💰 Best Rate Finder</div>
+          </div>
+        </div>
+        <div class="card-preview-overlay"></div>
+      </div>
+      <div class="card-tag">Finance</div>
+      <div class="card-live"><div class="live-dot"></div>Live</div>
+      <div class="card-body">
+        <div class="card-domain">loanloop.in</div>
+        <div class="card-title">LoanLoop — Loan Comparison Platform</div>
+        <div class="card-desc">A smart loan discovery and comparison platform that connects borrowers with the best loan options across banks and NBFCs — fast, transparent, and user-friendly.</div>
+        <div class="card-tags">
+          <span class="c-tag">Finance</span>
+          <span class="c-tag">Fintech</span>
+          <span class="c-tag">Comparison Platform</span>
+          <span class="c-tag">Lead Gen</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://loanloop.in" target="_blank" class="btn-visit">🌐 Visit Website</a>
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20website%20like%20loanloop.in" target="_blank" class="btn-wa">💬 Similar Site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ottloop.com -->
+    <div class="portfolio-card" data-cat="entertainment">
+      <div class="card-preview" style="background:linear-gradient(135deg,#1a1a2e,#e50914);">
+        <div style="padding:20px;color:#fff;">
+          <div style="font-size:22px;font-weight:800;margin-bottom:8px;">OTTLoop</div>
+          <div style="font-size:12px;opacity:0.75;margin-bottom:16px;">OTT Platform Guide & Reviews</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">🎬 OTT Platform Reviews</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">📺 Shows & Movie Guides</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;padding:8px 12px;font-size:12px;">💡 Subscription Comparisons</div>
+          </div>
+        </div>
+        <div class="card-preview-overlay"></div>
+      </div>
+      <div class="card-tag">Entertainment</div>
+      <div class="card-live"><div class="live-dot"></div>Live</div>
+      <div class="card-body">
+        <div class="card-domain">ottloop.com</div>
+        <div class="card-title">OTTLoop — OTT Guide & Review Platform</div>
+        <div class="card-desc">A comprehensive OTT platform guide featuring reviews, comparisons, subscription deals, and recommendations across Netflix, Prime, Hotstar, and more for Indian audiences.</div>
+        <div class="card-tags">
+          <span class="c-tag">Entertainment</span>
+          <span class="c-tag">OTT Reviews</span>
+          <span class="c-tag">Content Guide</span>
+          <span class="c-tag">SEO Blog</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://ottloop.com" target="_blank" class="btn-visit">🌐 Visit Website</a>
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20website%20like%20ottloop.com" target="_blank" class="btn-wa">💬 Similar Site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your Next Project Card -->
+    <div class="portfolio-card" data-cat="all" style="border:2px dashed #bfdbfe;background:#f8fafc;">
+      <div class="card-preview" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+        <div style="width:64px;height:64px;background:#1a6bff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;">🚀</div>
+        <div style="font-size:16px;font-weight:700;color:#1a6bff;">Your Project Here</div>
+        <div style="font-size:13px;color:#64748b;">Next in our portfolio</div>
+      </div>
+      <div class="card-body">
+        <div class="card-domain">yourwebsite.com</div>
+        <div class="card-title">Your Business Website</div>
+        <div class="card-desc">Ready to be our next success story? We'll build you a professional website that grows your business and generates real leads.</div>
+        <div class="card-tags">
+          <span class="c-tag">Your Idea</span>
+          <span class="c-tag">Any Industry</span>
+          <span class="c-tag">Starting ₹7,499</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://wa.me/917995137513?text=Hi%2C%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn-visit">💬 Start Your Project</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="max-width:700px;margin:0 auto;">
+    <h2>Want a Website Like These?</h2>
+    <p>We can build a professional, fast, and SEO-friendly website for your business — starting at just ₹7,499.</p>
+    <div class="cta-btns">
+      <a href="tel:+917995137513"><button class="btn-cta-white">📞 Call Now</button></a>
+      <a href="https://wa.me/917995137513?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20business" target="_blank"><button class="btn-cta-green">💬 WhatsApp Us</button></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">Tanuku Digital Marketing</div>
+        <p>Professional digital marketing services for businesses across Andhra Pradesh and India. Website Development · SEO · Social Media · WhatsApp Marketing.</p>
+        <div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
+          <a href="tel:+917995137513" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">📞 Call</a>
+          <a href="https://wa.me/917995137513" target="_blank" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">💬 WhatsApp</a>
+          <a href="mailto:tanukudigitalmarketing@gmail.com" style="background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:6px;font-size:12px;">📧 Email</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="website-development.html">Website Development</a>
+        <a href="seo.html">SEO Services</a>
+        <a href="smm.html">Social Media</a>
+        <a href="whatsapp-marketing.html">WhatsApp Marketing</a>
+        <a href="email-marketing.html">Email Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+917995137513">+91 7995137513</a>
+        <a href="mailto:tanukudigitalmarketing@gmail.com">tanukudigitalmarketing@gmail.com</a>
+        <a href="#">tanukudigitalmarketing.in</a>
+        <a href="#">Tanuku, Andhra Pradesh</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tanuku Digital Marketing. All rights reserved.</p>
+      <div style="display:flex;gap:1rem;">
+        <a href="#" style="font-size:13px;color:#475569;">Privacy Policy</a>
+        <a href="#" style="font-size:13px;color:#475569;">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function toggleMobileSvc(){
+  document.getElementById('mobileSub').classList.toggle('open');
+  document.getElementById('mobileSvcToggle').classList.toggle('open');
+}
+
+function filterCards(cat, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.portfolio-card').forEach(card=>{
+    const cardCat = card.getAttribute('data-cat');
+    if(cat==='all' || cardCat===cat){
+      card.style.display='block';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+</script>
+</body>
+</html>
